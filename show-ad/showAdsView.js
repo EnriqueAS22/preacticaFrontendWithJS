@@ -7,3 +7,7 @@ export const buildAd = (ad) => {
         `
     return adView
 }
+
+export const buildNoAdsAdvice = () => {
+    return '<h3>No hay anuncios disponibles de momento</h3>'
+}

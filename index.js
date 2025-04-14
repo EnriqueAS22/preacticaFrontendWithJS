@@ -1,3 +1,5 @@
 import { showAdsController } from "./show-ad/showAdsController.js";
 
-showAdsController()
+document.addEventListener("DOMContentLoaded", () => {
+    showAdsController()
+})
