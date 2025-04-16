@@ -9,7 +9,10 @@ export async function showAdsController(container) {
         const ads = await getAds()
         drawAds(ads, container)
     } catch (error) {
-        alert(error.message)
+        const event = new CustomEvent("load-tweets-error", {
+            detail: error.message
+        })
+        container.dispatchEvent(event)
     } finally {
         const event = new CustomEvent("load-ads-finished")
         container.dispatchEvent(event)
