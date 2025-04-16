@@ -1,11 +1,13 @@
 import { loaderController } from "./loader/loaderController.js"
 import { notificationsController } from "./notifications/notificationsController.js";
+import { sessionController } from "./session/sessionController.js";
 import { showAdsController } from "./show-ad/showAdsController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".ads-container")
     const loader = document.querySelector(".loader")
     const notifications = document.querySelector(".notifications")
+    const session = document.querySelector(".session")
     const { show, hide } = loaderController(loader)
     const { showNotification } = notificationsController(notifications)
 
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     container.addEventListener('load-ads-finished', () => {
         hide()
-        showNotification('ya he terminado de cargar los anuncios')
+        showNotification('anuncios cargados')
     })
     container.addEventListener('load-ads-error', (event) => {
         const errorMesage = event.detail;
@@ -22,4 +24,5 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     showAdsController(container)
+    sessionController(session)
 })
