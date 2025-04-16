@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Ads</title>
+</head>
+<body>
+    <h1>Create Ads</h1>
+
+    <form>
+        <label for="ad-name">Name: </label>
+        <input
+            id="ad-name"
+            name="ad-name"
+            type="text"
+            placeholder="nombre del producto"
+            required
+        />
+
+        <textarea name="ad-description" id="ad-description" required></textarea>
+
+        <label for="ad-price">Price: </label>
+        <input
+            id="ad-price"
+            name="ad-price"
+            type="text"
+            placeholder="precio del producto"
+            required
+        />
+
+        <label for="ad-state">State: </label>
+        <input
+            id="ad-state"
+            name="ad-state"
+            type="text"
+            placeholder="estado del producto"
+            required
+        />
+
+        <br />
+
+        <button>Create Ad</button>
+    </form>
+
+    <script type="module" src="./createAd.js"></script>
+</body>
+</html>

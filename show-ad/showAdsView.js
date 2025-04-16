@@ -1,4 +1,5 @@
 export const buildAd = (ad) => {
+    
     let adView = `
             <p>${ad.name}</p>
             <p>${ad.description}</p>

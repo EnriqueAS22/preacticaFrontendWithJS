@@ -1,3 +1,4 @@
+import { REGEXP } from "../utils/constants.js";
 import { createUser } from "./registerModel.js";
 
 export const registerController = (form) => {
@@ -15,7 +16,7 @@ export const registerController = (form) => {
         const errors = []
     
         // validar formato del email
-        const emailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+        const emailRegExp = REGEXP.mail;
         if (!emailRegExp.test(email)) {
             errors.push('El formato del email es incorrecto')
         }
@@ -41,7 +42,13 @@ export const registerController = (form) => {
     const handleCreateUser = async (name, email, password, form) => {
         try {
             await createUser(name, email, password);
-            // notificar al usuario de registro OK
+            const event = new CustomEvent("register-ok", {
+                detail: {
+                    message: 'Te has registrado correctamente',
+                    type: 'success'
+                }
+            });
+            form.dispatchEvent(event)
             setTimeout(() => {
                 window.location = '/'
             }, 5000);
