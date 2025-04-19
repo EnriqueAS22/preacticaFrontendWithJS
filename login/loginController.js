@@ -18,14 +18,24 @@ export function loginController(loginForm) {
         if (!emailRegExp.test(userEmail)) {
             alert('formato de mail incorrecto')
         } else {
-            handleLoginUser(userEmail, password)
+            handleLoginUser(userEmail, password, loginForm)
         }
 
     })
 
-    async function handleLoginUser(userEmail, password) {
+    async function handleLoginUser(userEmail, password, loginForm) {
         const token = await loginUser(userEmail, password);
 
         localStorage.setItem("token", token)
+        const event = new CustomEvent("register-ok", {
+            detail: {
+                message: 'Usuario encontrado',
+                type: 'success'
+            }
+        });
+        loginForm.dispatchEvent(event)
+        setTimeout(() => {
+            window.location = '/'
+        }, 5000);
     }
 }
