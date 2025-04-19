@@ -37,7 +37,7 @@ export function loginController(loginForm) {
             loginForm.dispatchEvent(event)
             setTimeout(() => {
                 window.location = '/'
-            }, 5000);
+            }, 2000);
         } catch (error) {
             const event = new CustomEvent("register-error", {
                 detail: {
