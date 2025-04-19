@@ -29,6 +29,7 @@ function drawAds(ads, container) {
     ads.forEach((ad) => {
         const adHtml = document.createElement("a")
         adHtml.setAttribute("href", `./ad-detail.html?id=${ad.id}`)
+        adHtml.classList.add("ad-link")
         adHtml.innerHTML = buildAd(ad)
     
         container.appendChild(adHtml)

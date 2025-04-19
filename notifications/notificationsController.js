@@ -13,12 +13,6 @@ export function notificationsController(notifications){
         newNotification.innerHTML = buildNotification(message, type)
 
         notifications.appendChild(newNotification)
-
-        const closeButton = newNotification.querySelector("button");
-
-        closeButton.addEventListener("click", () => {
-            removeNotification(newNotification);
-        });
     
         setTimeout(() => {
             removeNotification(newNotification)
