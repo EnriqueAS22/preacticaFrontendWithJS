@@ -4,6 +4,9 @@ export const createAdController = (form) => {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
+        const adImgElement = form.querySelector('#ad-image');
+        const adImg = adImgElement.files[0];
+
         const adNameElement = form.querySelector('#ad-name');
         const adName = adNameElement.value;
 
@@ -17,12 +20,23 @@ export const createAdController = (form) => {
         const adState = adStateElement.value;
 
         try {
-            await createAd(adName, adDescription, adPrice, adState)
+            const imgBase64 = await toBase64(adImg)
+
+            await createAd(adName, adDescription, adPrice, adState, imgBase64)
             setTimeout(() => {
                 window.location = '/';
             }, 2000)
         } catch (error) {
             alert(error.message)
         }
+    })
+}
+
+function toBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onload = () => resolve(reader.result)
+        reader.onerror = error => reject(error)
     })
 }

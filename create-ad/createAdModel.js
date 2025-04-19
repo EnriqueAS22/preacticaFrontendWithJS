@@ -1,4 +1,4 @@
-export const createAd = async (adName, adDescription, adPrice, adState) => {
+export const createAd = async (adName, adDescription, adPrice, adState, imgBase64) => {
   
     const token = localStorage.getItem("token");
   
@@ -8,7 +8,8 @@ export const createAd = async (adName, adDescription, adPrice, adState) => {
             name: adName,
             description: adDescription,
             price: adPrice,
-            state: adState
+            state: adState,
+            image: imgBase64
         }),
         headers: {
             "Content-type": "application/json",
@@ -17,7 +18,7 @@ export const createAd = async (adName, adDescription, adPrice, adState) => {
     });
   
     if (!response.ok) {
-        const data = response.json();
+        const data = await response.json();
         throw new Error("No se ha podido crear el anuncio(ad)")
     }
-  }
+}

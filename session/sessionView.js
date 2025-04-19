@@ -1,7 +1,9 @@
 export const buildUnauthorizedSession = () => {
     return `
-        <a href="./login.html">Login</a>
-        <a href="./register.html">Registro</a>
+        <ul class="navbar-nav">
+            <a class="nav-link disable" href="./login.html">Login</a>
+            <a class="nav-link disable" href="./register.html">Registro</a>
+        </ul>
     `;
 }
 
