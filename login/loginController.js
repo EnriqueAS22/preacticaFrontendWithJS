@@ -23,19 +23,29 @@ export function loginController(loginForm) {
 
     })
 
-    async function handleLoginUser(userEmail, password, loginForm) {
-        const token = await loginUser(userEmail, password);
-
-        localStorage.setItem("token", token)
-        const event = new CustomEvent("register-ok", {
-            detail: {
-                message: 'Usuario encontrado',
-                type: 'success'
-            }
-        });
-        loginForm.dispatchEvent(event)
-        setTimeout(() => {
-            window.location = '/'
-        }, 5000);
+    const handleLoginUser = async (userEmail, password, loginForm) => {
+        try {
+            const token = await loginUser(userEmail, password);
+    
+            localStorage.setItem("token", token)
+            const event = new CustomEvent("register-ok", {
+                detail: {
+                    message: 'Usuario encontrado',
+                    type: 'success'
+                }
+            });
+            loginForm.dispatchEvent(event)
+            setTimeout(() => {
+                window.location = '/'
+            }, 5000);
+        } catch (error) {
+            const event = new CustomEvent("register-error", {
+                detail: {
+                    message: 'Usuario no encontrado',
+                    type: 'error'
+                }
+            });
+            loginForm.dispatchEvent(event)
+        }
     }
 }
