@@ -20,8 +20,11 @@ export const createAdController = (form) => {
         const adState = adStateElement.value;
 
         try {
-            const imgBase64 = await toBase64(adImg)
+            let imgBase64 = null
 
+            if (adImg) {
+                imgBase64 = await toBase64(adImg)
+            }
             await createAd(adName, adDescription, adPrice, adState, imgBase64)
             setTimeout(() => {
                 window.location = '/';

@@ -7,7 +7,7 @@ export const buildAd = (ad) => {
     }
 
     let adView = `
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 40rem;">
             ${imageHtml}
             <div class="card-body">
                 <h5 class="card-title">${ad.name}</h5>

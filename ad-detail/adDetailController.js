@@ -12,7 +12,7 @@ export const adDetailController = async (adContainer, adId) => {
                 removeAd(adId)
                 setTimeout(() => {
                     window.location = '/'
-                }, 2000);
+                }, 1000);
             }
         })
     }

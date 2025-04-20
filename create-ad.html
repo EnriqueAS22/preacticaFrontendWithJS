@@ -20,51 +20,31 @@
     </nav>
 </header>
 <body>
-    <h1>Create Ads</h1>
-
-    <form>
-        <label for="ad-name">Name: </label>
-        <input
-        id="ad-name"
-        name="ad-name"
-        type="text"
-        placeholder="nombre del producto"
-        required
-        />
-        
-        <label for="ad-image">Imagen: </label>
-        <input
-            id="ad-image"
-            name="ad-image"
-            type="file"
-            accept="image/*"
-        />
-
-        <textarea name="ad-description" id="ad-description" required></textarea>
-
-        <label for="ad-price">Price: </label>
-        <input
-            id="ad-price"
-            name="ad-price"
-            type="text"
-            placeholder="precio del producto"
-            required
-        />
-
-        <label for="ad-state">State: </label>
-        <input
-            id="ad-state"
-            name="ad-state"
-            type="text"
-            placeholder="estado del producto"
-            required
-        />
-
-        <br />
-
-        <button>Create Ad</button>
+    <form class="mt-4 ms-4 me-4 w-50">
+        <div class="mb-3">
+            <label for="ad-name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="ad-name" id="ad-name" required>
+        </div>
+        <div class="mb-3">
+            <label for="ad-description" class="form-label">Description</label>
+            <textarea class="form-control" name="ad-description" id="ad-description" rows="10" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="ad-image" class="form-label">Image</label>
+            <input type="file" class="form-control" name="ad-image" id="ad-image" accept="image/*">
+        </div>
+        <div class="mb-3">
+            <label for="ad-price" class="form-label">Price</label>
+            <input type="numeric" class="form-control" name="ad-price" id="ad-price" required>
+        </div>
+        <div class="mb-3">
+            <label for="ad-state" class="form-label">State</label>
+            <input type="text" class="form-control" name="ad-state" id="ad-state" placeholder="Buy or Sell">
+        </div>
+    
+        <button class="btn btn-success">Create Ad</button>
     </form>
-
+    
     <script type="module" src="./createAd.js"></script>
 </body>
 </html>
