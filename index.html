@@ -6,6 +6,7 @@
     <title>Cien Anuncios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="./loader.css">
+    <link rel="stylesheet" href="./show-ad/card.css">
     <style>
         .ad-link {
           text-decoration: none;
@@ -19,7 +20,7 @@
 </head>
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
+        <div class="container-header">
             <a class="navbar-brand" href="/">Cien Anuncios</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,9 +32,9 @@
     </nav>
 </header>
 <body>
-    <div class="notifications"></div>
-    <div class="loader hidden"></div>
-    <div class="ads-container"></div>
+    <div class="notifications container-detail"></div>
+    <div class="loader hidden container-detail"></div>
+    <div class="ads-container container-custom"></div>
 
     <script type="module" src="./index.js"></script>
 </body>

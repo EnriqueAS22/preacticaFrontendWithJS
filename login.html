@@ -6,10 +6,11 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="./notifications/notifications.css" />
+    <link rel="stylesheet" href="./show-ad/card.css" />
 </head>
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
+        <div class="container-header">
             <a class="navbar-brand" href="/">Cien Anuncios</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -21,34 +22,26 @@
     </nav>
 </header>
 <body>
-    <div id="notifications"></div>
+    <div id="notifications container-detail"></div>
 
-    <form class="mt-4 ms-4 me-4 w-50">
+    <form class="container-detail">
         <div class="mb-3">
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label class="col-form-label" for="email">Email</label>
-                    <input
-                        class="form-control"
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="introduce tu email"
-                        required
-                    />
-                </div>
-            </div>
+            <label class="col-form-label" for="email">Email</label>
+            <input
+                class="form-control"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="introduce tu email"
+                required
+            />
         </div>
         <div class="mb-3">
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="password" class="col-form-label">Password</label>
-                    <input type="password" id="password" class="form-control" aria-describedby="passwordHelpInline">
-                    <span id="passwordHelpInline" class="form-text">
-                        Min. 6 characters long.
-                    </span>
-                </div>
-            </div>
+            <label for="password" class="col-form-label">Password</label>
+            <input type="password" id="password" class="form-control" aria-describedby="passwordHelpInline">
+            <span id="passwordHelpInline" class="form-text">
+                Min. 6 characters long.
+            </span>
         </div>
 
         <button type="submit" class="btn btn-success">Login</button>

@@ -2,3 +2,27 @@
     text-decoration: none;
     color: inherit;
 }
+
+.container-custom {
+    max-width: 50%;
+    width: 100%;
+    margin: 20px auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.container-detail {
+    max-width: 50%;
+    width: 100%;
+    margin: 40px auto 0 auto;
+}
+
+.container-header {
+    max-width: 50%;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}

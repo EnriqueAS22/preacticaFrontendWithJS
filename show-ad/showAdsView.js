@@ -7,7 +7,7 @@ export const buildAd = (ad) => {
     }
 
     let adView = `
-        <div class="card" style="width: 40rem;">
+        <div class="card h-100">
             ${imageHtml}
             <div class="card-body">
                 <h5 class="card-title">${ad.name}</h5>
@@ -24,5 +24,3 @@ export const buildAd = (ad) => {
 export const buildNoAdsAdvice = () => {
     return '<h3>No hay anuncios disponibles de momento</h3>'
 }
-
-
