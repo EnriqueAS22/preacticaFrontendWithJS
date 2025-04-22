@@ -2,7 +2,7 @@ export async function adDetailModel(adId) {
     const response = await fetch(`http://localhost:8000/api/ads/${adId}?_expand=user`);
   
     if (!response.ok) {
-        throw new Error("Anuncio no disponible")
+        throw new Error("Ad not available")
     }
     const adDetail = await response.json();
     return adDetail;
@@ -20,7 +20,7 @@ export async function removeAd(adId) {
     });
   
     if (!response.ok) {
-        throw new Error("Anuncio no disponible")
+        throw new Error("Ad not available")
     }
 }
   
@@ -34,7 +34,7 @@ export async function getLoggedInUserInfo() {
         }
     });
     if (!response.ok) {
-        throw new Error("Usuario no existente");
+        throw new Error("User does not exist");
     }
   
     const user = await response.json();

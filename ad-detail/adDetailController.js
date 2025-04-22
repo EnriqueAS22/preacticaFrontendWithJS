@@ -8,7 +8,7 @@ export const adDetailController = async (adContainer, adId) => {
         adContainer.appendChild(removeButton)
 
         removeButton.addEventListener("click", () => {
-            if (confirm("¿estás seguro de borrar el anuncio?")) {
+            if (confirm("Are you sure you want to delete the ad?")) {
                 removeAd(adId)
                 setTimeout(() => {
                     window.location = '/'

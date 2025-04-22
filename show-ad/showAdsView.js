@@ -22,5 +22,5 @@ export const buildAd = (ad) => {
 }
 
 export const buildNoAdsAdvice = () => {
-    return '<h3>No hay anuncios disponibles de momento</h3>'
+    return '<h3>There are no available ads right now.</h3>'
 }

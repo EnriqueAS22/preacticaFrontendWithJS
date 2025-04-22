@@ -18,12 +18,12 @@ export const registerController = (form) => {
         // validar formato del email
         const emailRegExp = REGEXP.mail;
         if (!emailRegExp.test(email)) {
-            errors.push('El formato del email es incorrecto')
+            errors.push('Email format is not valid')
         }
     
         // comprobar que las contraseñas son iguales
         if (password !== passwordConfirm) {
-            errors.push('Las contraseñas no son iguales')
+            errors.push('Passwords do not match')
         }
     
     
@@ -44,7 +44,7 @@ export const registerController = (form) => {
             await createUser(name, email, password);
             const event = new CustomEvent("register-ok", {
                 detail: {
-                    message: 'Te has registrado correctamente',
+                    message: 'You have successfully registered',
                     type: 'success'
                 }
             });

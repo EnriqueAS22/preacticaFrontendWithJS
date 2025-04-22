@@ -16,7 +16,7 @@ export function loginController(loginForm) {
         // 2- validar el mail
         const emailRegExp = new RegExp(REGEXP.mail);
         if (!emailRegExp.test(userEmail)) {
-            alert('formato de mail incorrecto')
+            alert('Email format is not valid')
         } else {
             handleLoginUser(userEmail, password, loginForm)
         }
@@ -30,7 +30,7 @@ export function loginController(loginForm) {
             localStorage.setItem("token", token)
             const event = new CustomEvent("register-ok", {
                 detail: {
-                    message: 'Usuario encontrado',
+                    message: 'User found',
                     type: 'success'
                 }
             });
@@ -41,7 +41,7 @@ export function loginController(loginForm) {
         } catch (error) {
             const event = new CustomEvent("register-error", {
                 detail: {
-                    message: 'Usuario no encontrado',
+                    message: 'User not found',
                     type: 'error'
                 }
             });
